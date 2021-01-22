@@ -2,10 +2,18 @@
 
 var kilometer;
 function kilometerToMeter(kilometer){
-    var meter=kilometer*1000;
-    return meter;
+    if(kilometer>0){
+        var meter=kilometer*1000;
+        return meter;
+    }
+    else{
+        var message="Give positive value as input!";
+        return message;
+    }
+ 
+
 }
-var resultOfMeter=kilometerToMeter(20);
+var resultOfMeter=kilometerToMeter(8);
 console.log(resultOfMeter);
 
 
@@ -19,11 +27,17 @@ var quantityOfPhone;
 var quantityOfLaptop;
 function budgetCalculator(quantityOfWatch, quantityOfPhone,quantityOfLaptop){
 
-    var costOfWatch=priceOfWatch*quantityOfWatch;
-    var costOfPhone=priceOfPhone*quantityOfPhone;
-    var costOfLaptop=priceOfLaptop*quantityOfLaptop;
-
-    return costOfWatch+costOfPhone+costOfLaptop;
+    if(quantityOfWatch>=0 && quantityOfPhone>=0 && quantityOfLaptop>=0){
+        var costOfWatch=priceOfWatch*quantityOfWatch;
+        var costOfPhone=priceOfPhone*quantityOfPhone;
+        var costOfLaptop=priceOfLaptop*quantityOfLaptop;
+    
+        return costOfWatch+costOfPhone+costOfLaptop;
+    }
+    else{
+        var message="Quantity can't be negative!";
+        return message;
+    }
 
 }
 console.log(budgetCalculator(10,20,30));
